@@ -4,7 +4,8 @@ metadata:
   name: uitodo-ingress
 
 spec:
-  ingressClassName: nginx
+  ingressClassName: azure-application-gateway
+
   rules:
   - host: uitodo-api.dhoomdhoom.shop
     http: 
