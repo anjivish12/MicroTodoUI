@@ -1,0 +1,53 @@
+name: UI Todo 
+
+on: push
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ACR_USERNAME: "anjaliacr"
+  ACR_PASSWORD: "fWDi6C9JCS5RsRO8JKV9R7yA5E8WflSc94b8nu4ToR+ACRAzuTaz"
+
+jobs:
+  my_first_job:
+    name: Build and Push Images
+    runs-on: anjali
+    steps:
+    
+    - name: Checkout
+      uses: actions/checkout@v6.0.0
+    
+    - name: Azure Login
+      uses: Azure/login@v2.3.0
+      with:
+  
+          client-id: 7b20495a-a14c-4ef2-bd11-222bf2538418
+          tenant-id: af734fcf-6a49-4af5-8ec9-51df7466b2c5
+          subscription-id: 95a90f4b-7e15-47ba-95ab-0d52bac078e4
+       
+          
+        
+    - name: Login to ACR
+      uses: docker/login-action@v3
+      with:
+          registry: "anjaliacr.azurecr.io"
+          username: ${{ env.ACR_USERNAME }}
+          password: ${{ env.ACR_PASSWORD }}
+          
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker Image
+      run: docker build -t uitodo:v1 .
+
+    - name: Tag Image
+      run: docker tag uitodo:v1 anjaliacr.azurecr.io/uitodo:v1
+
+    - name: Push Images to ACR
+      run: docker push anjaliacr.azurecr.io/uitodo:v1 
+
+    
+   
+          
