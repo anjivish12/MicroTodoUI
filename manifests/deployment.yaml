@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uitodo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: uitodo
+  template:
+    metadata:
+      labels:
+        app: uitodo
+    spec:
+      containers:
+      - name: uitodo
+        image: anjaliacr.azurecr.io/uitodo:v1
+        ports:
+        - containerPort: 80
