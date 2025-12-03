@@ -1,4 +1,4 @@
-name: UI Todo 
+name: UI Todo workflow
 
 on: push
 
@@ -8,7 +8,7 @@ permissions:
 
 env:
   ACR_USERNAME: "anjaliacr"
-  ACR_PASSWORD: "fWDi6C9JCS5RsRO8JKV9R7yA5E8WflSc94b8nu4ToR+ACRAzuTaz"
+  ACR_PASSWORD: "Di4kIH9M49GRGJXJV57zJrXsbHhV+HNiXMeV/dqBjG+ACRAymxth"
 
 jobs:
   my_first_job:
