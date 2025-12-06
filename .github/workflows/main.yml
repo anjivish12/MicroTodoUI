@@ -8,7 +8,7 @@ permissions:
 
 env:
   ACR_USERNAME: "anjaliacr"
-  ACR_PASSWORD: "JdtITabEwYMbN2TuufByhYVkfgsNqYRLFstuQYJmCj+ACRCtimpg"
+  ACR_PASSWORD: "AgyTcnTkRKQjtDnNG3KCQIKnZB2drAyWjdSrA4XK9P+ACRAYGC4q"
 
 jobs:
   my_first_job:
